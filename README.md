@@ -1,5 +1,7 @@
 # The ultimate Astro's template to quick start projects
 
+!['astro ultimate template'](/public/astrotemplate.webp)
+
 ## This configuration has:
 
 (everything is tested on VSCode not testes on Webstorm or any orher IDE)
