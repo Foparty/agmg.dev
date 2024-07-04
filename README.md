@@ -9,4 +9,3 @@
 - [x] Custom Aliases
 - [x] Internationalization i18n
 - [x] View Transitions (make sure if you need any dark theme, or loading JS on any page you will have to use astro:page-load)
-# astro-template-i18n-blog
