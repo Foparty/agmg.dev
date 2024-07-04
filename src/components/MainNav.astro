@@ -1,0 +1,26 @@
+---
+type Link = { url: string; title: string };
+
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<nav>
+	{
+		t('nav').map((link: { url: string; title: string }) => (
+			<a href={`/${lang}${link.url}`}>{link.title}</a>
+		))
+	}
+</nav>
+
+<style>
+	nav {
+		position: relative;
+		width: 100%;
+		display: flex;
+		gap: 2rem;
+		justify-content: center;
+	}
+</style>

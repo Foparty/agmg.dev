@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { getCollection } from 'astro:content';
+import { languages } from '../../i18n/ui';
+
+export const getStaticPaths = () =>
+	Object.keys(languages).map((lang) => ({ params: { lang } }));
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const allPosts = await getCollection('blog');
+const langPosts = allPosts.filter((post) => post.id.startsWith(`${lang}`));
+---
+
+<Layout title={t('mainPageTitle')}>
+	<section>
+		<h2>{t('mainTitle')}</h2>
+	</section>
+</Layout>
+
+<style>
+	h2 {
+		font-size: clamp(2rem, 3vw + 1rem, 4rem);
+		text-align: center;
+		line-height: 1.2;
+	}
+</style>

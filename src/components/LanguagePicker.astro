@@ -1,0 +1,23 @@
+---
+import { languages } from '../i18n/ui';
+const currentURL = Astro.url.pathname;
+---
+
+<ul>
+	{
+		Object.entries(languages).map(([lang, label]) => (
+			<li>
+				<a href={`/${lang}/${currentURL.slice(4)}`}>{label}</a>
+			</li>
+		))
+	}
+</ul>
+
+<style>
+	ul {
+		display: flex;
+		gap: 2rem;
+		list-style: none;
+		font-size: 2rem;
+	}
+</style>
