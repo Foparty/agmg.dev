@@ -6,9 +6,7 @@ const currentURL = Astro.url.pathname;
 <ul>
 	{
 		Object.entries(languages).map(([lang, label]) => (
-			<li>
-				<a href={`/${lang}/${currentURL.slice(4)}`}>{label}</a>
-			</li>
+			<a href={`/${lang}/${currentURL.slice(4)}`}>{label}</a>
 		))
 	}
 </ul>

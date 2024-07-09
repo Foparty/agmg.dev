@@ -2,11 +2,20 @@
 type Link = { url: string; title: string };
 
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { languages } from '../i18n/ui';
 
+const currentURL = Astro.url.pathname;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
+<div class='lang'>
+	{
+		Object.entries(languages).map(([lang, label]) => (
+			<a href={`/${lang}/${currentURL.slice(4)}`}>{label}</a>
+		))
+	}
+</div>
 <nav>
 	{
 		t('nav').map((link: { url: string; title: string }) => (
@@ -21,6 +30,11 @@ const t = useTranslations(lang);
 		width: 100%;
 		display: flex;
 		gap: 2rem;
-		justify-content: center;
+		justify-content: flex-end;
+		text-transform: uppercase;
+	}
+
+	.lang {
+		font-size: 2rem;
 	}
 </style>

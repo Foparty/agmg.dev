@@ -1,28 +1,77 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
-import { getCollection } from 'astro:content';
 import { languages } from '../../i18n/ui';
+import LanguagePicker from '../../components/LanguagePicker.astro';
 
 export const getStaticPaths = () =>
 	Object.keys(languages).map((lang) => ({ params: { lang } }));
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
-const allPosts = await getCollection('blog');
-const langPosts = allPosts.filter((post) => post.id.startsWith(`${lang}`));
 ---
 
 <Layout title={t('mainPageTitle')}>
-	<section>
-		<h2>{t('mainTitle')}</h2>
+	<section class='name'>
+		<img
+			class='cover'
+			src='/alfonsomartinportrait.webp'
+			alt={t('portraitAlt')}
+		/>
+		<h1 class='title'>{t('mainTitle')}</h1>
+		<p class='description'>
+			<span>
+				{t('mainDescription')[0].text}
+			</span>
+			<span class='grad'>
+				{t('mainDescription')[1].text}
+			</span>
+			<span>
+				{t('mainDescription')[2].text}
+			</span>
+		</p>
 	</section>
+	<!-- <LanguagePicker /> -->
 </Layout>
 
 <style>
-	h2 {
-		font-size: clamp(2rem, 3vw + 1rem, 4rem);
-		text-align: center;
-		line-height: 1.2;
+	.name {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+	}
+	.cover {
+		max-width: 10rem;
+		aspect-ratio: 1;
+		border-radius: 0.8rem;
+		rotate: 3deg;
+		box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.3);
+	}
+	.title {
+		font-size: clamp(1.4rem, 3vw + 1rem, 3rem);
+		text-transform: uppercase;
+		font-weight: 700;
+		background-color: #f4d03f;
+		background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
+
+		color: transparent;
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.description {
+		font-weight: 400;
+	}
+	.grad {
+		font-weight: 700;
+		background-color: #fad961;
+		background-image: linear-gradient(90deg, #f76b1c 40%, #fad961 100%);
+
+		color: transparent;
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
 </style>
