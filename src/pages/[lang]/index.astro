@@ -1,13 +1,33 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '@layouts/Layout.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 import { languages } from '../../i18n/ui';
-import LanguagePicker from '../../components/LanguagePicker.astro';
+import GitHub from '@icons/GitHub.astro';
+import LinkedIn from '@icons/LinkedIn.astro';
+import X from '@icons/X.astro';
 
 export const getStaticPaths = () =>
 	Object.keys(languages).map((lang) => ({ params: { lang } }));
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const socialLinks = [
+	{
+		name: 'Github',
+		url: 'https://github.com/Foparty',
+		icon: GitHub,
+	},
+	{
+		name: 'LinkdIn',
+		url: 'https://www.linkedin.com/in/alfonsomartingarcia/',
+		icon: LinkedIn,
+	},
+	{
+		name: 'X',
+		url: 'https://x.com/AlfonsoGorka',
+		icon: X,
+	},
+];
 ---
 
 <Layout title={t('mainPageTitle')}>
@@ -29,8 +49,21 @@ const t = useTranslations(lang);
 				{t('mainDescription')[2].text}
 			</span>
 		</p>
+		<small class='lead foot'>{t('description')} </small>
+		<small class='foot'>React / Astro / NextJs </small>
+		<section class='contact'>
+			{
+				socialLinks.map((item) => {
+					const Tag = item.icon;
+					return (
+						<a href={item.url} target='_blank' rel='noreferrer'>
+							<Tag class='icon' width='22' height='22' fill='#a1a1a7' />
+						</a>
+					);
+				})
+			}
+		</section>
 	</section>
-	<!-- <LanguagePicker /> -->
 </Layout>
 
 <style>
@@ -62,16 +95,45 @@ const t = useTranslations(lang);
 	}
 
 	.description {
+		font-size: clamp(0.9rem, 1vw + 1rem, 2rem);
+		text-align: center;
 		font-weight: 400;
 	}
 	.grad {
 		font-weight: 700;
 		background-color: #fad961;
 		background-image: linear-gradient(90deg, #f76b1c 40%, #fad961 100%);
-
 		color: transparent;
 		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
+	}
+
+	.foot {
+		font-size: clamp(0.7rem, 1vw + 0.5rem, 1.1rem);
+		text-align: center;
+		font-weight: 600;
+	}
+	.lead {
+		padding: 2rem 0 0 0;
+	}
+
+	.contactlink {
+		width: 50px;
+		background-color: rgba(0, 0, 0, 0.2);
+	}
+
+	.contact {
+		padding-top: 2rem;
+		display: flex;
+		gap: 2rem;
+	}
+
+	.icon {
+		transition: scale 200ms ease-in;
+	}
+	.icon:hover {
+		scale: 1.1;
+		transition: scale 200ms ease-in;
 	}
 </style>

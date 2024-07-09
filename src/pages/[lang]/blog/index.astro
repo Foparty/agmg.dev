@@ -15,22 +15,20 @@ const langPosts = allPosts.filter((post) => post.id.startsWith(`${lang}`));
 ---
 
 <Layout title={t('mainBlogTitle')}>
-	<section>
+	<section class='blogsection'>
 		<h2>{t('blogTitle')}</h2>
-		<main>
-			{
-				langPosts.map((post) => (
-					<a href={`/${lang}/blog/${post.slug.slice(3)}`}>{post.data.title}</a>
-				))
-			}
-		</main>
+
+		{
+			langPosts.map((post) => (
+				<a href={`/${lang}/blog/${post.slug.slice(3)}`}>{post.data.title}</a>
+			))
+		}
 	</section>
 </Layout>
 
 <style>
-	section {
+	.blogsection {
 		min-height: 100%;
-		padding: 2rem 0;
 	}
 	h2 {
 		font-size: clamp(2rem, 3vw + 1rem, 4rem);

@@ -21,7 +21,7 @@ const { Content } = await page.render();
 ---
 
 <Layout title={page.data.title}>
-	<section>
+	<section class='blogpage'>
 		<a class='backbtn' href={`/${lang}/blog`}>back</a>
 		<h1>{page.data.title}</h1>
 		<!-- <p>by {page.data.author} • {formattedDate}</p> -->
@@ -32,11 +32,10 @@ const { Content } = await page.render();
 </Layout>
 
 <style>
-	section {
+	.blogpage {
 		min-height: 100%;
 		width: 100%;
 		max-width: 64ch;
-		padding: 2rem 0;
 		h1 {
 			margin-top: 2rem;
 		}

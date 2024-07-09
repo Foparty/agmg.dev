@@ -4,7 +4,7 @@ interface Props {
 }
 
 import { ViewTransitions } from 'astro:transitions';
-import LanguagePicker from '../components/LanguagePicker.astro';
+import LanguagePicker from '@components/LanguagePicker.astro';
 import MainNav from '@components/MainNav.astro';
 import { getLangFromUrl } from '../i18n/utils';
 
@@ -25,6 +25,8 @@ const { title }: Props = Astro.props;
 		<ViewTransitions />
 	</head>
 	<body>
+		<MainNav />
+
 		<main class='main'>
 			<slot />
 		</main>
@@ -40,7 +42,9 @@ const { title }: Props = Astro.props;
 
 			html {
 				font-family: system-ui, sans-serif;
-				background: #27262b;
+				/* background: #27262b; */
+				/* background: #18181b; */
+				background: #222222;
 				color: #a1a1a8;
 				color-scheme: dark light;
 			}
@@ -58,14 +62,13 @@ const { title }: Props = Astro.props;
 			.main {
 				width: min(100% - 2.5rem, 75rem);
 				margin-inline: auto;
-			}
-
-			.main {
 				min-height: 100vh;
 				min-height: 100dvh;
+				padding: 3rem 0;
 				display: grid;
 				place-items: center;
 			}
+
 			h1,
 			h2,
 			h3,

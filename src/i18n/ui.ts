@@ -13,6 +13,10 @@ export const ui = {
         url: "/",
       },
       {
+        title: "CV",
+        url: "/about",
+      },
+      {
         title: "blog",
         url: "/blog",
       },
@@ -31,26 +35,24 @@ export const ui = {
         text: "experiece.",
       },
     ],
-    statSectionItems: [
-      {
-        text: "+20 customers",
-      },
-      {
-        text: "+35 projects",
-      },
-      {
-        text: "+5y experience",
-      },
-    ],
-    mainContact: "Book a call!",
-    mainBlogTitle: "Blog | The Ultimate Astro Template",
+    description:
+      "Development of Apps and web solutions in JavaScript development environments.",
+
+    mainBlogTitle: "Blog | Alfonso Martín web developer",
     blogTitle: "The Blog Page",
+
+    mainAboutTitle: "CV-About | Alfonso Martín web developer",
+    aboutDescription: "Web developer in Canarias, Sp",
   },
   es: {
     nav: [
       {
         title: "inicio",
         url: "/",
+      },
+      {
+        title: "CV",
+        url: "/about",
       },
       {
         title: "blog",
@@ -71,19 +73,13 @@ export const ui = {
         text: "de experiencia.",
       },
     ],
-    statSectionItems: [
-      {
-        text: "+20 clientes",
-      },
-      {
-        text: "+35 proyectos",
-      },
-      {
-        text: "+5a de esperiencia",
-      },
-    ],
-    mainContact: "Programa una llamada!",
-    mainBlogTitle: "Blog | Plantilla definitiva de Astro",
+    description:
+      "Desarrollo de Apps y soluciones webs en entornos de desarrollo JavaScript",
+
+    mainBlogTitle: "Blog | Alfonso Martín desarrollador web",
     blogTitle: "El Blog",
+
+    mainAboutTitle: "CV-Sobre mi | Alfonso Martín desarrollador web",
+    aboutDescription: "Desarrollador Web en Canarias, Sp",
   },
 } as const;
