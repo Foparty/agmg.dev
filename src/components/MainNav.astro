@@ -1,6 +1,11 @@
 ---
+type NavLink = {
+	title: string;
+	url: string;
+};
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import { languages } from '../i18n/ui';
+import type { StringLiteral } from 'typescript';
 
 const currentURL = Astro.url.pathname;
 const lang = getLangFromUrl(Astro.url);
@@ -17,7 +22,7 @@ const t = useTranslations(lang);
 	</div>
 	<nav>
 		{
-			t('nav').map((link: { url: string; title: string }) => (
+			(t('nav') as NavLink[]).map((link) => (
 				<a href={`/${lang}${link.url}`}>{link.title}</a>
 			))
 		}
