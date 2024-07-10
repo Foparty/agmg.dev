@@ -2,6 +2,9 @@
 import Layout from '@layouts/Layout.astro';
 import { getLangFromUrl, useTranslations } from 'src/i18n/utils';
 import { languages } from 'src/i18n/ui';
+import WorkExperience from '@sections/about/WorkExperience.astro';
+import StudiesSection from '@sections/about/StudiesSection.astro';
+import Languages from '@sections/about/Languages.astro';
 
 export const getStaticPaths = () =>
 	Object.keys(languages).map((lang) => ({ params: { lang } }));
@@ -11,7 +14,7 @@ const t = useTranslations(lang);
 ---
 
 <Layout title={t('mainAboutTitle')}>
-	<section class='aboutpage'>
+	<article class='aboutpage'>
 		<div class='details'>
 			<img src='/alfonsomartinportrait.webp' alt='Alfonso Martín Portrait' />
 			<div class='data'>
@@ -20,16 +23,25 @@ const t = useTranslations(lang);
 				<small class='available'>Available for remote work</small>
 			</div>
 		</div>
-	</section>
+		<section class='workexperience'>
+			<WorkExperience />
+		</section>
+		<section class='studies'>
+			<StudiesSection />
+		</section>
+		<section class='languages'>
+			<Languages />
+		</section>
+	</article>
 </Layout>
 
 <style>
 	.aboutpage {
-		min-height: 100%;
-		width: min(100% - 0.5rem, 512px);
+		min-height: calc(100% - var(--navHeight));
+		width: min(100% - 0.5rem, 540px);
 		margin-inline: auto;
 		@media (width > 478px) {
-			width: min(100% - 2.5rem, 512px);
+			width: min(100% - 2.5rem, 550px);
 		}
 	}
 
@@ -58,5 +70,15 @@ const t = useTranslations(lang);
 			padding: 0.2rem 1rem;
 			border-radius: 100rem;
 		}
+	}
+	.workexperience {
+		padding: 3rem 0;
+		font-size: 0.9rem;
+	}
+	.studies,
+	.languages {
+		/* padding: 3rem 0; */
+		font-size: 0.9rem;
+		padding-bottom: 3rem;
 	}
 </style>

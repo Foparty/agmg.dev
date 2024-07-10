@@ -1,9 +1,11 @@
 ---
-const { fill, ...rest } = Astro.props;
+const { fill, width = 22, height = 22, ...rest } = Astro.props;
 ---
 
 <svg
 	{...rest}
+	width={width}
+	height={height}
 	viewBox='0 0 256 250'
 	fill={fill}
 	xmlns='http://www.w3.org/2000/svg'
