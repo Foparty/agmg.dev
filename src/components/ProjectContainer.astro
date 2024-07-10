@@ -29,19 +29,32 @@ const { project } = Astro.props;
 
 <style>
 	.projectContainer {
-		scroll-snap-align: center;
+		width: 70%;
+		height: auto;
+		max-height: 60vh;
+		aspect-ratio: 9 / 16;
+		background: repeating-linear-gradient(
+			45deg,
+			#0a0c0d 0,
+			#0a0c0d 10px,
+			#020202 20px,
+			#0a0c0d 30px
+		);
+		border-radius: 0.8rem;
+		box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.8);
+		padding: 1rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		gap: 2rem;
-		height: 100%;
-		width: 100%;
-		padding: 2rem 0;
+
 		@media (width > 680px) {
 			flex-direction: row;
 			justify-content: space-between;
 			align-items: center;
 			gap: 1rem;
+			padding: 3rem;
+			aspect-ratio: 5/ 3;
 		}
 	}
 	.dataContainer,

@@ -21,47 +21,21 @@ const langProjects = allProjects.filter((post) =>
 
 <Layout title='projects site'>
 	<section class='projects'>
-		<div class='projectsContainer'>
-			{langProjects.map((project) => <ProjectContainer project={project} />)}
-		</div>
+		<!-- <div class='projectsContainer'> -->
+		{langProjects.map((project) => <ProjectContainer project={project} />)}
+		<!-- </div> -->
 	</section>
 </Layout>
 
 <style>
 	.projects {
-		border: 1px solid red;
 		width: 100%;
 		min-height: calc(100% - var(--navHeight));
+		padding: 6rem 0;
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
 		align-items: center;
-	}
-	.projectsContainer {
-		border: 1px solid red;
-		position: relative;
-		border-radius: 0.8rem;
-		box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.8);
-		padding: 1rem;
-		width: 75%;
-		aspect-ratio: 9 / 16;
-		height: auto;
-		overflow-y: scroll;
-		scroll-snap-type: y mandatory;
-		background: repeating-linear-gradient(
-			45deg,
-			#0a0c0d 0,
-			#0a0c0d 10px,
-			#020202 20px,
-			#0a0c0d 30px
-		);
-		-ms-overflow-style: none; /* IE and Edge */
-		scrollbar-width: none;
-		@media (width > 680px) {
-			padding: 3rem;
-			aspect-ratio: 5/ 3;
-		}
-		&::-webkit-scrollbar {
-			display: none;
-		}
+		justify-content: center;
+		gap: 10rem;
 	}
 </style>
