@@ -34,6 +34,10 @@ const socialLinks = [
 		icon: Fiverr,
 	},
 ];
+
+type MainDescription = {
+	text: string;
+};
 ---
 
 <Layout title={t('mainPageTitle') as string}>
@@ -46,13 +50,13 @@ const socialLinks = [
 		<h1 class='title'>{t('mainTitle')}</h1>
 		<p class='description'>
 			<span>
-				{t('mainDescription')[0].text}
+				{(t('mainDescription')[0] as MainDescription).text}
 			</span>
 			<span class='grad'>
-				{t('mainDescription')[1].text}
+				{(t('mainDescription')[1] as MainDescription).text}
 			</span>
 			<span>
-				{t('mainDescription')[2].text}
+				{(t('mainDescription')[2] as MainDescription).text}
 			</span>
 		</p>
 		<small class='lead foot'>{t('description')} </small>
@@ -63,7 +67,7 @@ const socialLinks = [
 					const Tag = item.icon;
 					return (
 						<a href={item.url} target='_blank' rel='noreferrer'>
-							<Tag class='icon' width='22' height='22' fill='#a1a1a7' />
+							<Tag class='icon' width={22} height={22} fill='#a1a1a7' />
 						</a>
 					);
 				})
