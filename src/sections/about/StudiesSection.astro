@@ -1,6 +1,11 @@
 ---
 import { getLangFromUrl, useTranslations } from 'src/i18n/utils';
 
+type Education = {
+	date: string;
+	title: string;
+};
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
@@ -9,7 +14,7 @@ const t = useTranslations(lang);
 
 <div class='experiences'>
 	{
-		t('education').map((item) => (
+		(t('education') as Education[]).map((item) => (
 			<div class='experience'>
 				<span class='date'>{item.date}</span>
 				<span class='role'>{item.title}</span>

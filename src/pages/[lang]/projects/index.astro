@@ -5,8 +5,6 @@ import { getLangFromUrl, useTranslations } from 'src/i18n/utils';
 import { languages } from 'src/i18n/ui';
 import { getCollection } from 'astro:content';
 
-import ArrowDown from '@icons/ArrowDown.astro';
-
 export const getStaticPaths = () =>
 	Object.keys(languages).map((lang) => ({ params: { lang } }));
 
@@ -19,7 +17,7 @@ const langProjects = allProjects.filter((post) =>
 );
 ---
 
-<Layout title='projects site'>
+<Layout title={t('mainProjectsTitle') as string}>
 	<section class='projects'>
 		<!-- <div class='projectsContainer'> -->
 		{langProjects.map((project) => <ProjectContainer project={project} />)}

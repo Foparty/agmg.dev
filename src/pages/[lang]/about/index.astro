@@ -13,7 +13,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout title={t('mainAboutTitle')}>
+<Layout title={t('mainAboutTitle') as string}>
 	<article class='aboutpage'>
 		<div class='details'>
 			<img src='/alfonsomartinportrait.webp' alt='Alfonso Martín Portrait' />

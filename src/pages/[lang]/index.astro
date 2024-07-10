@@ -66,8 +66,8 @@ type MainDescription = {
 				socialLinks.map((item) => {
 					const Tag = item.icon;
 					return (
-						<a href={item.url} target='_blank' rel='noreferrer'>
-							<Tag class='icon' width={22} height={22} fill='#a1a1a7' />
+						<a class='icon' href={item.url} target='_blank' rel='noreferrer'>
+							<Tag width={22} height={22} fill='#a1a1a7' />
 						</a>
 					);
 				})
@@ -141,10 +141,10 @@ type MainDescription = {
 		gap: 2rem;
 	}
 
-	.icon {
+	.icon > * {
 		transition: scale 200ms ease-in;
 	}
-	.icon:hover {
+	.icon > *:hover {
 		scale: 1.1;
 		transition: scale 200ms ease-in;
 	}

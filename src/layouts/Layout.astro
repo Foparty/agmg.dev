@@ -4,7 +4,6 @@ interface Props {
 }
 
 import { ViewTransitions } from 'astro:transitions';
-import LanguagePicker from '@components/LanguagePicker.astro';
 import MainNav from '@components/MainNav.astro';
 import { getLangFromUrl } from '../i18n/utils';
 
@@ -26,10 +25,10 @@ const { title }: Props = Astro.props;
 	</head>
 	<body>
 		<MainNav />
-
 		<main class='main'>
 			<slot />
 		</main>
+
 		<style is:global>
 			@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 

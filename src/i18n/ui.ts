@@ -44,6 +44,7 @@ export const ui = {
 
     mainBlogTitle: "Blog | Alfonso Martín web developer",
     blogTitle: "Sadly 🥲 nothing to see here yet!",
+    mainProjectsTitle: "Projects | Alfonso Martín web developer",
 
     mainAboutTitle: "CV-About | Alfonso Martín web developer",
     aboutDescription: "Web developer in Canarias, Sp",
@@ -155,6 +156,8 @@ export const ui = {
 
     mainBlogTitle: "Blog | Alfonso Martín desarrollador web",
     blogTitle: "Tristemente 🥲 esto está vacío por ahora!",
+
+    mainProjectsTitle: "Proyectos | Alfonso Martín web developer",
 
     mainAboutTitle: "CV-Sobre mi | Alfonso Martín desarrollador web",
     aboutDescription: "Desarrollador Web en Canarias, Sp",

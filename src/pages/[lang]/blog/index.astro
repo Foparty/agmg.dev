@@ -10,11 +10,11 @@ export const getStaticPaths = () =>
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const allPosts = await getCollection('blog');
-const langPosts = allPosts.filter((post) => post.id.startsWith(`${lang}`));
+// const allPosts = await getCollection('blog');
+// const langPosts = allPosts.filter((post) => post.id.startsWith(`${lang}`));
 ---
 
-<Layout title={t('mainBlogTitle')}>
+<Layout title={t('mainBlogTitle') as string}>
 	<section class='blogsection'>
 		<h2>{t('blogTitle')}</h2>
 

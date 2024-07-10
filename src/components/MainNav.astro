@@ -5,7 +5,6 @@ type NavLink = {
 };
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import { languages } from '../i18n/ui';
-import type { StringLiteral } from 'typescript';
 
 const currentURL = Astro.url.pathname;
 const lang = getLangFromUrl(Astro.url);
