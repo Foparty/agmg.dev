@@ -36,12 +36,12 @@ const socialLinks = [
 ];
 ---
 
-<Layout title={t('mainPageTitle')}>
+<Layout title={t('mainPageTitle') as string}>
 	<section class='name'>
 		<img
 			class='cover'
 			src='/alfonsomartinportrait.webp'
-			alt={t('portraitAlt')}
+			alt={t('portraitAlt') as string}
 		/>
 		<h1 class='title'>{t('mainTitle')}</h1>
 		<p class='description'>
