@@ -1,4 +1,9 @@
 ---
+type Props = {
+	width?: number;
+	height?: number;
+	fill?: string;
+};
 const { fill, width = 22, height = 22, ...rest } = Astro.props;
 ---
 

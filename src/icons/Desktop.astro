@@ -1,10 +1,10 @@
 ---
 type Props = {
-	width: number;
-	height: number;
-	fill: string;
+	width?: number;
+	height?: number;
+	fill?: string;
 };
-const { fill, width = 22, height = 22, ...rest }: Props = Astro.props;
+const { fill = 'white', width = 22, height = 22, ...rest }: Props = Astro.props;
 ---
 
 <svg
