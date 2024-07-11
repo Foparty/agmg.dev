@@ -20,10 +20,10 @@ export const ui = {
         title: "CV",
         url: "/about",
       },
-      {
-        title: "blog",
-        url: "/blog",
-      },
+      // {
+      //   title: "blog",
+      //   url: "/blog",
+      // },
     ],
     mainPageTitle: "Home | Alfonso Martín web developer",
     portraitAlt: "Alfonso Martín portrait photo",
@@ -132,10 +132,10 @@ export const ui = {
         title: "CV",
         url: "/about",
       },
-      {
-        title: "blog",
-        url: "/blog",
-      },
+      // {
+      //   title: "blog",
+      //   url: "/blog",
+      // },
     ],
     mainPageTitle: "Inicio | Alfonso Martín desarrollador web",
     portraitAlt: "Retrato Alfonso Martín",
