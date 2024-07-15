@@ -6,6 +6,20 @@ import Layout from '@layouts/Layout.astro';
 
 <Layout title='Alfonso Martín | Webdev'>
 	<section class='loading'>
+		<img src='/loading.webp' alt='Loading... Alfonso Martín emoji' />
 		<h1>Loading</h1>
 	</section>
 </Layout>
+
+<style>
+	.loading {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		justify-content: center;
+		align-items: center;
+		img {
+			max-width: 10rem;
+		}
+	}
+</style>
