@@ -1,151 +1,156 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
-import { languages } from '../../i18n/ui';
-import GitHub from '@icons/GitHub.astro';
-import LinkedIn from '@icons/LinkedIn.astro';
-import X from '@icons/X.astro';
-import Fiverr from '@icons/Fiverr.astro';
+import Layout from "@layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { languages } from "../../i18n/ui";
+import GitHub from "@icons/GitHub.astro";
+import LinkedIn from "@icons/LinkedIn.astro";
+import X from "@icons/X.astro";
+import Fiverr from "@icons/Fiverr.astro";
 
 export const getStaticPaths = () =>
-	Object.keys(languages).map((lang) => ({ params: { lang } }));
+  Object.keys(languages).map((lang) => ({ params: { lang } }));
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const socialLinks = [
-	{
-		name: 'Github',
-		url: 'https://github.com/Foparty',
-		icon: GitHub,
-	},
-	{
-		name: 'LinkdIn',
-		url: 'https://www.linkedin.com/in/alfonsomartingarcia/',
-		icon: LinkedIn,
-	},
-	{
-		name: 'X',
-		url: 'https://x.com/AlfonsoGorka',
-		icon: X,
-	},
-	{
-		name: 'Fiverr',
-		url: 'https://www.fiverr.com/alfonsomg',
-		icon: Fiverr,
-	},
+  {
+    name: "Github",
+    url: "https://github.com/Foparty",
+    icon: GitHub,
+  },
+  {
+    name: "LinkdIn",
+    url: "https://www.linkedin.com/in/alfonsomartingarcia/",
+    icon: LinkedIn,
+  },
+  {
+    name: "X",
+    url: "https://x.com/AlfonsoGorka",
+    icon: X,
+  },
+  // {
+  // 	name: 'Fiverr',
+  // 	url: 'https://www.fiverr.com/alfonsomg',
+  // 	icon: Fiverr,
+  // },
 ];
 
 type MainDescription = {
-	text: string;
+  text: string;
 };
 ---
 
-<Layout title={t('mainPageTitle') as string}>
-	<section class='name'>
-		<img
-			class='cover'
-			src='/alfonsomartinportrait.webp'
-			alt={t('portraitAlt') as string}
-		/>
-		<h1 class='title'>{t('mainTitle')}</h1>
-		<p class='description'>
-			<span>
-				{(t('mainDescription')[0] as MainDescription).text}
-			</span>
-			<span class='grad'>
-				{(t('mainDescription')[1] as MainDescription).text}
-			</span>
-			<span>
-				{(t('mainDescription')[2] as MainDescription).text}
-			</span>
-		</p>
-		<small class='lead foot'>{t('description')} </small>
-		<small class='foot'>React / Astro / NextJs </small>
-		<section class='contact'>
-			{
-				socialLinks.map((item) => {
-					const Tag = item.icon;
-					return (
-						<a class='icon' href={item.url} target='_blank' rel='noreferrer'>
-							<Tag width={22} height={22} fill='#a1a1a7' />
-						</a>
-					);
-				})
-			}
-		</section>
-	</section>
+<Layout title={t("mainPageTitle") as string}>
+  <section class="name">
+    <img
+      class="cover"
+      src="/alfonsomartinportrait.webp"
+      alt={t("portraitAlt") as string}
+    />
+    <h1 class="title">{t("mainTitle")}</h1>
+    <p class="description">
+      <span>
+        {(t("mainDescription")[0] as MainDescription).text}
+      </span>
+      <span class="grad">
+        {(t("mainDescription")[1] as MainDescription).text}
+      </span>
+      <span>
+        {(t("mainDescription")[2] as MainDescription).text}
+      </span>
+    </p>
+    <small class="lead foot">{t("description")} </small>
+    <small class="foot">React / Astro / NextJs </small>
+    <section class="contact">
+      {
+        socialLinks.map((item) => {
+          const Tag = item.icon;
+          return (
+            <a class="icon" href={item.url} target="_blank" rel="noreferrer">
+              <Tag width={22} height={22} fill="#a1a1a7" />
+            </a>
+          );
+        })
+      }
+    </section>
+  </section>
 </Layout>
 
 <style>
-	.name {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 1rem;
-	}
-	.cover {
-		max-width: 10rem;
-		aspect-ratio: 1;
-		border-radius: 0.8rem;
-		rotate: 3deg;
-		box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.3);
-	}
-	.title {
-		font-size: clamp(1.4rem, 3vw + 1rem, 3rem);
-		text-transform: uppercase;
-		font-weight: 700;
-		background-color: #f4d03f;
-		background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
+  .name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
 
-		color: transparent;
-		background-clip: text;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-	}
+  .cover {
+    max-width: 10rem;
+    aspect-ratio: 1;
+    border-radius: 0.8rem;
+    rotate: 3deg;
+    box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.3);
+  }
 
-	.description {
-		font-size: clamp(0.9rem, 1vw + 1rem, 2rem);
-		text-wrap: pretty;
-		text-align: center;
-		font-weight: 400;
-	}
-	.grad {
-		font-weight: 700;
-		background-color: #fad961;
-		background-image: linear-gradient(90deg, #f76b1c 40%, #fad961 100%);
-		color: transparent;
-		background-clip: text;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-	}
+  .title {
+    font-size: clamp(1.4rem, 3vw + 1rem, 3rem);
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: #f4d03f;
+    background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
 
-	.foot {
-		font-size: clamp(0.7rem, 1vw + 0.5rem, 1.1rem);
-		text-wrap: pretty;
-		text-align: center;
-		font-weight: 600;
-	}
-	.lead {
-		padding: 2rem 0 0 0;
-	}
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-	.contactlink {
-		width: 50px;
-		background-color: rgba(0, 0, 0, 0.2);
-	}
+  .description {
+    font-size: clamp(0.9rem, 1vw + 1rem, 2rem);
+    text-wrap: pretty;
+    text-align: center;
+    font-weight: 400;
+  }
 
-	.contact {
-		padding-top: 2rem;
-		display: flex;
-		gap: 2rem;
-	}
+  .grad {
+    font-weight: 700;
+    background-color: #fad961;
+    background-image: linear-gradient(90deg, #f76b1c 40%, #fad961 100%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-	.icon > * {
-		transition: scale 200ms ease-in;
-	}
-	.icon > *:hover {
-		scale: 1.1;
-		transition: scale 200ms ease-in;
-	}
+  .foot {
+    font-size: clamp(0.7rem, 1vw + 0.5rem, 1.1rem);
+    text-wrap: pretty;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .lead {
+    padding: 2rem 0 0 0;
+  }
+
+  .contactlink {
+    width: 50px;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .contact {
+    padding-top: 2rem;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .icon > * {
+    transition: scale 200ms ease-in;
+  }
+
+  .icon > *:hover {
+    scale: 1.1;
+    transition: scale 200ms ease-in;
+  }
 </style>

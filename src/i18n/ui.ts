@@ -12,10 +12,10 @@ export const ui = {
         title: "home",
         url: "/",
       },
-      {
-        title: "projects",
-        url: "/projects",
-      },
+      // {
+      //   title: "projects",
+      //   url: "/projects",
+      // },
       {
         title: "CV",
         url: "/about",
@@ -124,10 +124,10 @@ export const ui = {
         title: "inicio",
         url: "/",
       },
-      {
-        title: "proyectos",
-        url: "/projects",
-      },
+      // {
+      //   title: "proyectos",
+      //   url: "/projects",
+      // },
       {
         title: "CV",
         url: "/about",
