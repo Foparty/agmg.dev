@@ -43,7 +43,7 @@ export const ui = {
       "Development of Apps and web solutions in JavaScript development environments.",
 
     mainBlogTitle: "Blog | Alfonso Martín web developer",
-    blogTitle: "Sadly 🥲 nothing to see here yet!",
+    blogTitle: "Blog",
     mainProjectsTitle: "Projects | Alfonso Martín web developer",
 
     mainAboutTitle: "CV-About | Alfonso Martín web developer",
@@ -57,19 +57,19 @@ export const ui = {
       },
       {
         date: "2017 - 2019",
-        title: "CEO Asdrubalismos S.L.",
+        title: "Co-Founder Asdrubalismos S.L.",
       },
       {
         date: "2010 - 2017",
-        title: "Tech Specialist at Apple Retail.",
+        title: "Tech Specialist / Mentor at Apple Retail.",
       },
       {
         date: "2007 - 2010",
-        title: "Head of 3DsMax department at Autodesk reseller.",
+        title: "Web developer & Head of 3D department at Autodesk reseller.",
       },
       {
         date: "2004 - 2007",
-        title: "Audio & Video Technician.",
+        title: "Web developer & Media Technician at DMB S.L.",
       },
     ],
 
@@ -155,7 +155,7 @@ export const ui = {
       "Desarrollo de Apps y soluciones webs en entornos de desarrollo JavaScript.",
 
     mainBlogTitle: "Blog | Alfonso Martín desarrollador web",
-    blogTitle: "Tristemente 🥲 esto está vacío por ahora!",
+    blogTitle: "Blog",
 
     mainProjectsTitle: "Proyectos | Alfonso Martín web developer",
 
@@ -166,23 +166,24 @@ export const ui = {
     workExperience: [
       {
         date: "2022 - now",
-        title: "Desarrollador Frontend freelance.",
+        title: "Desarrollador Web freelance.",
       },
       {
         date: "2017 - 2019",
-        title: "CEO Asdrubalismos S.L.",
+        title: "Co fundador Asdrubalismos S.L.",
       },
       {
         date: "2010 - 2017",
-        title: "Especialista Técnico en Apple Retail.",
+        title: "Especialista Técnico y Mentor en Apple Retail.",
       },
       {
         date: "2007 - 2010",
-        title: "Encargado de 3DsMax en distribuidor Autodesk.",
+        title:
+          "Desarrollador web y encargado de productos 3D en distribuidor Autodesk.",
       },
       {
         date: "2004 - 2007",
-        title: "Técnico audiovisual.",
+        title: "Desarrollador web y técnico audiovisual en DMB S.L.",
       },
     ],
 
