@@ -5,5 +5,6 @@ excerpt: simple but fun project to create interesting layouts
 categories: ["javascript", "css"]
 cover: /work/randomgallery.webp
 github: https://github.com/Foparty/randomgalleryprivate
-url: https://random-gallery.netlify.app/
+site: https://random-gallery.netlify.app/
+order: 5
 ---

@@ -5,5 +5,6 @@ excerpt: Interesante proyecto con un sistema de Grid un poco particular y cuya l
 categories: ["astro", "css"]
 cover: /work/gastro.webp
 github: https://github.com/Foparty/gastro
-url: https://gastro-seven.vercel.app/
+site: https://gastro-seven.vercel.app/
+order: 1
 ---

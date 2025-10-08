@@ -5,6 +5,7 @@ import { languages } from "../../i18n/ui";
 import GitHub from "@icons/GitHub.astro";
 import LinkedIn from "@icons/LinkedIn.astro";
 import X from "@icons/X.astro";
+import YouTube from "@icons/YouTube.astro";
 import Fiverr from "@icons/Fiverr.astro";
 
 export const getStaticPaths = () =>
@@ -23,11 +24,16 @@ const socialLinks = [
     url: "https://www.linkedin.com/in/alfonsomartingarcia/",
     icon: LinkedIn,
   },
-  // {
-  //   name: "X",
-  //   url: "https://x.com/AlfonsoGorka",
-  //   icon: X,
-  // },
+  {
+    name: "X",
+    url: "https://x.com/fodotdev",
+    icon: X,
+  },
+  {
+    name: "YouTube",
+    url: "https://youtube.com/@apple_helper",
+    icon: YouTube,
+  },
   // {
   // 	name: 'Fiverr',
   // 	url: 'https://www.fiverr.com/alfonsomg',
@@ -60,7 +66,7 @@ type MainDescription = {
       </span>
     </p>
     <small class="lead foot">{t("description")} </small>
-    <small class="foot">React / Astro / NextJs </small>
+    <!-- <small class="foot">React / Astro / NextJs / PHP </small> -->
     <section class="contact">
       {
         socialLinks.map((item) => {

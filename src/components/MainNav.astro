@@ -1,10 +1,10 @@
 ---
 type NavLink = {
-	title: string;
-	url: string;
+  title: string;
+  url: string;
 };
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import { languages } from '../i18n/ui';
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { languages } from "../i18n/ui";
 
 const currentURL = Astro.url.pathname;
 const lang = getLangFromUrl(Astro.url);
@@ -12,43 +12,48 @@ const t = useTranslations(lang);
 ---
 
 <header>
-	<div class='lang'>
-		{
-			Object.entries(languages).map(([lang, label]) => (
-				<a href={`/${lang}/${currentURL.slice(4)}`}>{label}</a>
-			))
-		}
-	</div>
-	<nav>
-		{
-			(t('nav') as NavLink[]).map((link) => (
-				<a href={`/${lang}${link.url}`}>{link.title}</a>
-			))
-		}
-	</nav>
+  <div class="lang">
+    {
+      Object.entries(languages).map(([lang, label]) => (
+        <a href={`/${lang}/${currentURL.slice(4)}`}>{label}</a>
+      ))
+    }
+  </div>
+  <nav>
+    {
+      (t("nav") as NavLink[]).map((link) => (
+        <a href={`/${lang}${link.url}`}>{link.title}</a>
+      ))
+    }
+  </nav>
 </header>
 
 <style>
-	header {
-		min-height: var(--navHeight);
-		width: min(100% - 2.5rem, 75rem);
-		margin-inline: auto;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav {
-		position: relative;
-		width: 100%;
-		display: flex;
-		gap: 2rem;
-		justify-content: flex-end;
-		text-transform: uppercase;
-	}
+  header {
+    min-height: var(--navHeight);
+    width: min(100% - 2.5rem, 75rem);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav {
+    position: relative;
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-end;
+    text-transform: uppercase;
+  }
 
-	.lang {
-		font-size: 2rem;
-		display: flex;
-		gap: 1rem;
-	}
+  .lang {
+    display: flex;
+    gap: 1rem;
+    a {
+      font-size: 1.3rem;
+      @media (width > 576px) {
+        font-size: 2rem;
+      }
+    }
+  }
 </style>

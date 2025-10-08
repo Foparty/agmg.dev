@@ -12,12 +12,14 @@ const projects = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    description: z.string(),
+    description: z.string().optional(),
     excerpt: z.string(),
-    categories: z.array(z.string()),
-    cover: z.string(),
-    github: z.string(),
-    url: z.string(),
+    categories: z.array(z.string()).optional(),
+    cover: z.string().optional(),
+    github: z.string().optional(),
+    site: z.string().optional(),
+    live: z.string().optional(),
+    order: z.number(),
   }),
 });
 

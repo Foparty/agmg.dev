@@ -5,5 +5,6 @@ excerpt: Interesante proyecto utilizando NextJs y ReactJs con Intersection Obser
 categories: ["nextjs", "reactjs", "css"]
 cover: /work/tesla.webp
 github: https://github.com/Foparty/teslaclonwithanimation
-url: https://tesla-clon.vercel.app/
+site: https://tesla-clon.vercel.app/
+order: 3
 ---

@@ -30,17 +30,16 @@ export const ui = {
     mainTitle: "Alfonso Martín",
     mainDescription: [
       {
-        text: "Front-end developer",
+        text: "Web Developer",
       },
       {
-        text: "+4 years ",
+        text: "+6 years ",
       },
       {
         text: "experiece.",
       },
     ],
-    description:
-      "Development of Apps and web solutions in JavaScript development environments.",
+    description: "Developing solutions for the Web.",
 
     mainBlogTitle: "Blog | Alfonso Martín web developer",
     blogTitle: "Blog",
@@ -142,17 +141,16 @@ export const ui = {
     mainTitle: "Alfonso Martín",
     mainDescription: [
       {
-        text: "Desarrollador front-end con ",
+        text: "Desarrollador Web ",
       },
       {
-        text: "+4 años ",
+        text: "+6 años ",
       },
       {
         text: "de experiencia.",
       },
     ],
-    description:
-      "Desarrollo de Apps y soluciones webs en entornos de desarrollo JavaScript.",
+    description: "Desarrollando soluciones para la Web.",
 
     mainBlogTitle: "Blog | Alfonso Martín desarrollador web",
     blogTitle: "Blog",

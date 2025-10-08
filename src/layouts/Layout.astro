@@ -34,6 +34,9 @@ const { title }: Props = Astro.props;
       :root {
         --navHeight: 6rem;
       }
+      ::-webkit-scrollbar {
+        display: none;
+      }
 
       *,
       *::after,
@@ -50,6 +53,8 @@ const { title }: Props = Astro.props;
         background: #222222;
         color: #a1a1a8;
         color-scheme: dark light;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer, Edge */
       }
 
       body {
@@ -79,6 +84,9 @@ const { title }: Props = Astro.props;
         /* padding: 3rem 0; */
         display: grid;
         place-items: center;
+        &:has(.projectContainer) {
+          place-items: start;
+        }
       }
 
       h1,
