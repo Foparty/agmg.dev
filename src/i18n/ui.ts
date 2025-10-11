@@ -12,10 +12,10 @@ export const ui = {
         title: "home",
         url: "/",
       },
-      // {
-      //   title: "projects",
-      //   url: "/projects",
-      // },
+      {
+        title: "projects",
+        url: "/projects",
+      },
       {
         title: "CV",
         url: "/about",
@@ -30,14 +30,11 @@ export const ui = {
     mainTitle: "Alfonso Martín",
     mainDescription: [
       {
-        text: "Web Developer",
+        text: "I'm a",
       },
       {
-        text: "+6 years ",
-      },
-      {
-        text: "experiece.",
-      },
+        text: "web developer",
+      }
     ],
     description: "Developing solutions for the Web.",
 
@@ -123,10 +120,10 @@ export const ui = {
         title: "inicio",
         url: "/",
       },
-      // {
-      //   title: "proyectos",
-      //   url: "/projects",
-      // },
+      {
+        title: "proyectos",
+        url: "/projects",
+      },
       {
         title: "CV",
         url: "/about",
@@ -141,14 +138,11 @@ export const ui = {
     mainTitle: "Alfonso Martín",
     mainDescription: [
       {
-        text: "Desarrollador Web ",
+        text: "Soy",
       },
       {
-        text: "+6 años ",
-      },
-      {
-        text: "de experiencia.",
-      },
+        text: "desarrollador web",
+      }
     ],
     description: "Desarrollando soluciones para la Web.",
 

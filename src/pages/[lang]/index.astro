@@ -1,12 +1,12 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-import { languages } from "../../i18n/ui";
-import GitHub from "@icons/GitHub.astro";
-import LinkedIn from "@icons/LinkedIn.astro";
-import X from "@icons/X.astro";
-import YouTube from "@icons/YouTube.astro";
-import Fiverr from "@icons/Fiverr.astro";
+import Layout from '@layouts/Layout.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { languages } from '../../i18n/ui';
+import GitHub from '@icons/GitHub.astro';
+import LinkedIn from '@icons/LinkedIn.astro';
+import X from '@icons/X.astro';
+import YouTube from '@icons/YouTube.astro';
+import Fiverr from '@icons/Fiverr.astro';
 
 export const getStaticPaths = () =>
   Object.keys(languages).map((lang) => ({ params: { lang } }));
@@ -15,23 +15,23 @@ const t = useTranslations(lang);
 
 const socialLinks = [
   {
-    name: "Github",
-    url: "https://github.com/Foparty",
+    name: 'Github',
+    url: 'https://github.com/Foparty',
     icon: GitHub,
   },
   {
-    name: "LinkdIn",
-    url: "https://www.linkedin.com/in/alfonsomartingarcia/",
+    name: 'LinkdIn',
+    url: 'https://www.linkedin.com/in/alfonsomartingarcia/',
     icon: LinkedIn,
   },
   {
-    name: "X",
-    url: "https://x.com/fodotdev",
+    name: 'X',
+    url: 'https://x.com/fodotdev',
     icon: X,
   },
   {
-    name: "YouTube",
-    url: "https://youtube.com/@apple_helper",
+    name: 'YouTube',
+    url: 'https://youtube.com/@apple_helper',
     icon: YouTube,
   },
   // {
@@ -46,26 +46,23 @@ type MainDescription = {
 };
 ---
 
-<Layout title={t("mainPageTitle") as string}>
+<Layout title={t('mainPageTitle') as string}>
   <section class="name">
     <img
       class="cover"
       src="/alfonsomartinportrait.webp"
-      alt={t("portraitAlt") as string}
+      alt={t('portraitAlt') as string}
     />
-    <h1 class="title">{t("mainTitle")}</h1>
+    <h1 class="title">{t('mainTitle')}</h1>
     <p class="description">
       <span>
-        {(t("mainDescription")[0] as MainDescription).text}
+        {(t('mainDescription')[0] as MainDescription).text}
       </span>
       <span class="grad">
-        {(t("mainDescription")[1] as MainDescription).text}
-      </span>
-      <span>
-        {(t("mainDescription")[2] as MainDescription).text}
+        {(t('mainDescription')[1] as MainDescription).text}
       </span>
     </p>
-    <small class="lead foot">{t("description")} </small>
+    <!--<small class="lead foot">{t('description')} </small>-->
     <!-- <small class="foot">React / Astro / NextJs / PHP </small> -->
     <section class="contact">
       {

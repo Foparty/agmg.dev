@@ -1,7 +1,7 @@
 ---
-import GitHub from "@icons/GitHub.astro";
-import Desktop from "@icons/Desktop.astro";
-import Live from "@icons/Live.astro";
+import GitHub from '@icons/GitHub.astro';
+import Desktop from '@icons/Desktop.astro';
+import Live from '@icons/Live.astro';
 
 const { project } = Astro.props;
 ---
@@ -100,6 +100,8 @@ const { project } = Astro.props;
     }
   }
   .coverContainer img {
+    border-radius: 0.5rem;
+    overflow: hidden;
     @media (width > 576px) {
       width: 15rem;
       border-radius: 0.5rem;
