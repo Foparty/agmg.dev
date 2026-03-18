@@ -1,16 +1,16 @@
 ---
-import { getCollection, render } from 'astro:content';
-import Layout from '../../../layouts/Layout.astro';
+import { getCollection, render } from "astro:content";
+import Layout from "../../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-	const pages = await getCollection('blog');
+  const pages = await getCollection("blog");
 
-	const paths = pages.map((page) => {
-		const [lang, ...slug] = page.id.replace(/\.[^.]+$/, '').split('/');
-		return { params: { lang, slug: slug.join('/') || undefined }, props: page };
-	});
+  const paths = pages.map((page) => {
+    const [lang, ...slug] = page.id.replace(/\.[^.]+$/, "").split("/");
+    return { params: { lang, slug: slug.join("/") || undefined }, props: page };
+  });
 
-	return paths;
+  return paths;
 }
 
 const { lang } = Astro.params;
@@ -20,30 +20,30 @@ const { Content } = await render(page);
 ---
 
 <Layout title={page.data.title}>
-	<section class='blogpage'>
-		<a class='backbtn' href={`/${lang}/blog`}>back</a>
-		<h1>{page.data.title}</h1>
+  <section class="blogpage">
+    <a class="backbtn" href={`/${lang}/blog`}>back</a>
+    <h1>{page.data.title}</h1>
 
-		<main>
-			<Content />
-		</main>
-	</section>
+    <main>
+      <Content />
+    </main>
+  </section>
 </Layout>
 
 <style>
-	.blogpage {
-		min-height: 100%;
-		width: 100%;
-		max-width: 64ch;
-		h1 {
-			margin-top: 2rem;
-		}
-		.backbtn {
-			font-size: 2rem;
-			text-transform: uppercase;
-		}
-	}
-	main {
-		padding: 2rem 0;
-	}
+  .blogpage {
+    min-height: 100%;
+    width: 100%;
+    max-width: 64ch;
+    h1 {
+      margin-top: 2rem;
+    }
+    .backbtn {
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+  }
+  main {
+    padding: 2rem 0;
+  }
 </style>
