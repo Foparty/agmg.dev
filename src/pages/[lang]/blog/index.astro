@@ -20,7 +20,7 @@ const langPosts = allPosts.filter((post) => post.id.startsWith(`${lang}`));
     <main class="post">
       {
         langPosts.map((post) => (
-          <a href={`/${lang}/blog/${post.slug.slice(3)}`}>{post.data.title}</a>
+          <a href={`/${lang}/blog/${post.id.replace(/\.[^.]+$/, '').slice(3)}`}>{post.data.title}</a>
         ))
       }
     </main>
